@@ -15,8 +15,8 @@ static float angle_result_set[ROW][COL];
 
 // number of rows processed by each thread needs to be worked out manually!
 // **number of threads MUST be even!! (2, 4, 6, 8 ect.)**
-static const int number_of_rows    = 1875;
-static const int number_of_threads = 8;
+static const int number_of_threads = 4;
+static const int number_of_rows    = ROW/number_of_threads;
 
 // struct is passed to each thread, giving each their own 
 // start and end rows to process.
