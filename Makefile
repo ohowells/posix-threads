@@ -2,7 +2,7 @@
 CXX=g++
 
 # Options to be passed to the compiler
-CXXFLAGS=-std=c++11 -Wall -lpthread -lrt
+CXXFLAGS=-std=c++11 -lpthread -lrt
 
 p3: cw_code_p3.cpp
 	$(CXX) $(CXXFLAGS) cw_code_p3.cpp
