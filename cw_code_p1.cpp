@@ -25,7 +25,7 @@ int main(void)
     
     // fill array
 	srand((float)time(NULL));
-	for (int i = 0; i < ROW; i++)
+	for (auto i = 0; i < ROW; i++)
 	{
 		for (int j = 0; j < COL; j++)
 			random_set[i][j] = (rand() % 20 + 1);
