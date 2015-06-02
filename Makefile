@@ -14,4 +14,4 @@ p1: cw_code_p1.cpp
 	$(CXX) cw_code_p1.cpp $(CXXFLAGS) 
 
 clean:
-	rm -f *.o p1 p2 p3  
+	rm -f *.o p1 p2 p3 a.out
