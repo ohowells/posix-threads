@@ -1,5 +1,6 @@
 #include <iostream>
 #include <pthread.h>
+#include <random>
 #include <stdlib.h>
 #include <time.h>
 
@@ -23,11 +24,13 @@ struct RowsToProcess { int end, start; };
 
 static void FillArray(void)
 {
-	srand((float)time(NULL));
+	std::default_random_engine rand;
+	std::uniform_int_distribution<> dis(1, 20);
+
 	for (auto i = 0; i < ROW; i++)
 	{
 		for (auto j = 0; j < COL; j++)
-			random_set[i][j] = (rand() % 20 + 1);
+			random_set[i][j] = dis(rand);
 	}
 }
 
@@ -86,10 +89,10 @@ int main(void)
 	pthread_t n_threads[number_of_threads];
 	RowsToProcess struct_data[number_of_threads];
 
+	FillArray();
     // CLOCK_MONOTONIC represents the absolute elapsed wall-clock time
     // since some arbitrary, fixed point in the past e.g. start.
     clock_gettime(CLOCK_MONOTONIC, &start);
-	FillArray();
 
 	for (auto i = 0; i < number_of_threads; i++)
 	{
