@@ -26,5 +26,5 @@ above so that locking etc. is not an issue.
 
 To run type the commands:
 
->make
+>make  
 >./pthread.o
