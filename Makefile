@@ -2,16 +2,22 @@
 CXX=g++
 
 # Options to be passed to the compiler
-CXXFLAGS=-std=c++11 -lpthread -lrt
+#
+# CXXFLAGS_D for default
+CXXFLAGS_D=-std=c++11 -lpthread -lrt -o
+
+CXXFLAGS=-std=c++11 -lrt -o
+
+OBJECTS=pthread.o
 
 default:
-	$(CXX) cw_code_p3.cpp $(CXXFLAGS)
+	$(CXX) cw_code_p3.cpp $(CXXFLAGS_D) $(OBJECTS)
 
 p2:
-	$(CXX) cw_code_p2.cpp $(CXXFLAGS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) cw_code_p2.cpp
 
 p1:
-	$(CXX) cw_code_p1.cpp $(CXXFLAGS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) cw_code_p1.cpp
 
 clean:
-	rm -f *.o default p2 p3 a.out
+	rm -f $(OBJECTS) *.out
