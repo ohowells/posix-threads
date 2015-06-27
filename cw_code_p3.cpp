@@ -77,6 +77,7 @@ void* ProcessRowsThread(void* param)
 		}
 		LoadBar(i, end_row);
 	}
+	return 0;
 }
 
 
