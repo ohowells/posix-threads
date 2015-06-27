@@ -1,5 +1,5 @@
 # Compiler to use
-CXX=g++
+CXX=clang++
 
 # Options to be passed to the compiler
 #
